@@ -1,15 +1,15 @@
 /* CSS Custom Properties - Theme Variables */
 :root {
     /* Colors */
-    --primary-color: #4a9eff;
+    --primary-color: #1c416bdf;
     --primary-hover: #3182ce;
     --secondary-color: #2d3748;
     --accent-color: #667eea;
     --accent-secondary: #764ba2;
     --background-color: #1a202c;
     --background-alt: #2d3748;
-    --text-primary: #e2e8f0;
-    --text-secondary: #a0aec0;
+    --text-primary: #e2e8f0c3;
+    --text-secondary: #e5e9ee;
     --text-light: #718096;
     --text-white: #fff;
     --border-color: #4a5568;
