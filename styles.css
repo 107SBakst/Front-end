@@ -8,8 +8,8 @@
     --accent-secondary: #764ba2;
     --background-color: #1a202c;
     --background-alt: #2d3748;
-    --text-primary: #e2e8f0c3;
-    --text-secondary: #e5e9ee;
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e0;
     --text-light: #718096;
     --text-white: #fff;
     --border-color: #4a5568;
@@ -18,10 +18,16 @@
     --overlay-light: rgba(26, 32, 44, 0.95);
     --overlay-medium: rgba(26, 32, 44, 0.98);
     --card-background: #2d3748;
-    --nav-background: rgba(26, 32, 44, 0.95);
-    --nav-background-scroll: rgba(26, 32, 44, 0.98);
+    --nav-background: rgba(26, 32, 44, 1);
+    --nav-background-scroll: rgba(26, 32, 44, 1);
+    --nav-text-color: #2d3748;
+    --nav-logo-color: #1c416bdf;
+    --date-color: #5c88c4;
     --tech-tag-background: #4a5568;
     --tech-tag-text-color: #4a9eff;
+    --skill-background: #3182ce;
+    --skill-text-color: #ffffff;
+    --skill-border: #1c416bdf;
 
     /* Typography */
     --font-family: 'Inter', sans-serif;
@@ -129,7 +135,7 @@ body {
 .nav-logo a {
     font-size: var(--nav-text);
     font-weight: var(--font-weight-bold);
-    color: var(--text-primary);
+    color: var(--nav-logo-color);
     text-decoration: none;
 }
 
@@ -140,7 +146,7 @@ body {
 }
 
 .nav-link {
-    color: var(--text-primary);
+    color: #8095ba;
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
     transition: color var(--transition-fast);
@@ -159,7 +165,7 @@ body {
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--text-primary);
+    background: var(--nav-text-color);
     margin: 3px 0;
     transition: var(--transition-fast);
 }
@@ -297,18 +303,22 @@ body {
 }
 
 .skill-item {
-    background: var(--card-background);
+    background: var(--skill-background);
     padding: 12px 20px;
     border-radius: var(--border-radius-lg);
     text-align: center;
     font-weight: var(--font-weight-semibold);
-    color: var(--text-primary);
+    color: var(--skill-text-color);
     box-shadow: var(--skill-shadow);
-    transition: transform var(--transition-fast);
+    border: 2px solid var(--skill-border);
+    transition: all var(--transition-fast);
 }
 
 .skill-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+    background: var(--primary-color);
 }
 
 /* Resume Section */
@@ -353,7 +363,7 @@ body {
 }
 
 .date {
-    color: var(--primary-color);
+    color: var(--date-color);
     font-weight: var(--font-weight-semibold);
 }
 
@@ -361,6 +371,30 @@ body {
     color: var(--text-light);
     font-weight: var(--font-weight-semibold);
     margin-bottom: 1rem;
+}
+
+.company-link {
+    color: #557dbc;
+    text-decoration: underline;
+    font-weight: var(--font-weight-semibold);
+    transition: color var(--transition-fast);
+}
+
+.company-link:hover {
+    color: #4299e1;
+    text-decoration: none;
+}
+
+.resume-header .company-link {
+    color: #557dbc;
+    text-decoration: underline;
+    font-weight: var(--font-weight-semibold);
+    transition: color var(--transition-fast);
+}
+
+.resume-header .company-link:hover {
+    color: #4299e1;
+    text-decoration: none;
 }
 
 .resume-item ul {
