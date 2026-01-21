@@ -298,7 +298,7 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1rem;
 }
 
@@ -312,6 +312,8 @@ body {
     box-shadow: var(--skill-shadow);
     border: 2px solid var(--skill-border);
     transition: all var(--transition-fast);
+    white-space: normal;       /* allows text to wrap */
+    word-break: break-word;    /* ensures long words break instead of overflowing */
 }
 
 .skill-item:hover {
