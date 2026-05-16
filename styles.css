@@ -1,6 +1,22 @@
 /* CSS Custom Properties - Theme Variables */
 :root {
-    /* Colors */
+    /* Standardized Dynamic Style Variables - will be overridden by style-loader.js */
+    --primary-bg: #0f172a;
+    --secondary-bg: #1e293b;
+    --tertiary-bg: #334155;
+    --primary-text: #f8fafc;
+    --secondary-text: #e2e8f0;
+    --muted-text: #94a3b8;
+    --primary-blue: #3b82f6;
+    --blue-hover: #2563eb;
+    --primary-font: system-ui, -apple-system, sans-serif;
+    --border-radius: 10px;
+    --max-width: 1400px;
+    --container-padding: 24px;
+    --card-padding: 20px;
+    --default-transition: all 0.2s;
+    
+    /* Legacy Portfolio Colors - keeping for compatibility */
     --primary-color: #1c416bdf;
     --primary-hover: #3182ce;
     --secondary-color: #2d3748;
