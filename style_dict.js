@@ -118,7 +118,10 @@ export const styleDict = {
         bold: "700",
         semi_bold: "600",
         medium: "500",
-        normal: "400"
+        normal: "400",
+        
+        // Line Heights
+        line_height: "1.6"
     },
     
     layout: {
@@ -256,6 +259,15 @@ export const cssVariables = {
     '--chart-ticks': styleDict.colors.chart_ticks,
     '--chart-legend': styleDict.colors.chart_legend,
     
+    // Gradient Variables
+    '--hero-gradient': styleDict.colors.hero_gradient,
+    '--stats-gradient': styleDict.colors.stats_gradient,
+    '--highlight-gradient': styleDict.colors.highlight_gradient,
+    '--sources-gradient': styleDict.colors.sources_gradient,
+    '--feature-gradient': styleDict.colors.feature_gradient,
+    '--automation-gradient': styleDict.colors.automation_gradient,
+    '--text-gradient': styleDict.colors.text_gradient,
+    
     // Typography Variables
     '--primary-font': styleDict.typography.primary_font,
     '--formula-font': styleDict.typography.formula_font,
@@ -298,6 +310,7 @@ export const cssVariables = {
     '--semi-bold': styleDict.typography.semi_bold,
     '--medium': styleDict.typography.medium,
     '--normal': styleDict.typography.normal,
+    '--line-height': styleDict.typography.line_height,
     
     // Layout Variables
     '--max-width': styleDict.layout.max_width,
