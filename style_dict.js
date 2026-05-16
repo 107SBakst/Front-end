@@ -153,6 +153,7 @@ export const styleDict = {
         model_formula_padding: "16px",
         table_header_padding: "10px 12px",
         table_cell_padding: "12px",
+        footer_white_line_top_margin: "3px",
         
         // Heights
         chart_container_height: "500px",
@@ -339,6 +340,7 @@ export const cssVariables = {
     '--model-formula-padding': styleDict.layout.model_formula_padding,
     '--table-header-padding': styleDict.layout.table_header_padding,
     '--table-cell-padding': styleDict.layout.table_cell_padding,
+    '--footer-line-top-margin': styleDict.layout.footer_white_line_top_margin,
     
     '--chart-container-height': styleDict.layout.chart_container_height,
     '--chart-container-full-height': styleDict.layout.chart_container_full_height,
