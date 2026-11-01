@@ -4,289 +4,344 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Bakst - Portfolio</title>
+    <meta name="description" content="Samuel Bakst, economist and senior consultant at Quod. CV, skills and GDT, a live project that keeps every revision of economic data.">
+    <meta name="theme-color" content="#111417">
+    <!-- Theme first, without defer, so the page never flashes the wrong theme (same logic as GDT). -->
+    <script src="assets/js/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="assets/js/style-loader.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Navigation: the GDT bar (mark + name, nav, GDT link, theme control) -->
+    <header class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Samuel Bakst</a>
+            <a href="#home" class="nav-logo gdt-brand" aria-label="Samuel Bakst, home">
+                <span class="gdt-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>Samuel Bakst</span>
+            </a>
+            <nav class="nav-primary" aria-label="Site">
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#resume" class="nav-link">CV</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener" class="gdt-live">
+                    <span class="live-dot" aria-hidden="true"></span><span>GDT<span class="gdt-long"> · live project</span></span><span aria-hidden="true">↗</span>
+                </a>
+                <div class="gdt-theme-set" role="radiogroup" aria-label="Theme" data-gdt-theme-set>
+                    <button type="button" role="radio" data-mode="system" aria-checked="true">System</button>
+                    <button type="button" role="radio" data-mode="light" aria-checked="false">Light</button>
+                    <button type="button" role="radio" data-mode="dark" aria-checked="false">Dark</button>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#resume" class="nav-link">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-toggle">
+            <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title"><span class="highlight">Samuel Bakst</span></h1>
-            <h2 class="hero-subtitle">Economist | Macro | Energy</h2>
-            <p class="hero-description">Economist by training with a focus on macroeconomics, econometrics, and machine learning — driven by the challenge of applying AI and data science to economic data and theory.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <svg class="hero-lines" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true">
+            <polyline pathLength="1" class="line-a" points="0,470 120,450 240,460 360,410 480,425 600,370 720,390 840,330 960,345 1080,290 1200,302 1320,250 1440,230"/>
+            <polyline pathLength="1" class="line-b" points="0,490 120,468 240,476 360,432 480,440 600,392 720,406 840,356 960,362 1080,316 1200,322 1320,278 1440,254"/>
+            <polyline pathLength="1" class="line-c" points="0,510 120,486 240,492 360,452 480,456 600,412 720,420 840,376 960,378 1080,336 1200,340 1320,298 1440,276"/>
+        </svg>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-subtitle rise">Economist · Macro · Energy</p>
+                <h1 class="hero-title rise d1" id="hero-title">Samuel Bakst</h1>
+                <p class="hero-description rise d2">Economist by training with a focus on macroeconomics, econometrics, and machine learning — driven by the challenge of applying AI and data science to economic data and theory.</p>
+                <div class="hero-buttons rise d3">
+                    <a href="#projects" class="btn btn-light">View my work <span aria-hidden="true">→</span></a>
+                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+                </div>
             </div>
+            <aside class="hero-feature rise d4" aria-label="Featured project">
+                <div class="hero-feature-top">
+                    <span class="live-label"><span class="live-dot" aria-hidden="true"></span>Live project</span>
+                    <span class="mono">gdtv2-eosin.vercel.app</span>
+                </div>
+                <a href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener" class="hero-shot zoom" aria-label="Open GDT (screenshot of the GDT landing page)">
+                    <img src="assets/img/gdt-landing.jpg" width="1440" height="900" alt="The GDT landing page: a dotted globe beside a feed of the latest data releases">
+                </a>
+                <h2>GDT · Global Data Technology</h2>
+                <p>An archive of economic data that I built and run. It keeps every earlier version of each number, so you can see what was known on any date.</p>
+                <a href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener" class="btn btn-light btn-sm">Open GDT <span aria-hidden="true">↗</span></a>
+            </aside>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about section" aria-labelledby="about-title">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-head">
+                <p class="section-label">01 · About</p>
+                <h2 class="section-title" id="about-title">About me</h2>
+            </div>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="SB headshot 2023.jpg" alt="Professional headshot" class="headshot">
+                <div class="about-image box zoom">
+                    <img src="SB headshot 2023.jpg" alt="Professional headshot of Samuel Bakst" class="headshot">
                 </div>
                 <div class="about-text">
-                    <p> I'm an economist with experience in macroeconomic forecasting. I enjoy using the latest machine learning and data science techniques in economic research, that can improve insight and efficiency into data. I am always eager to learn new technologies and take on challenging projects to improve my knowledge and skills in this rapidly changing profession.</p>
+                    <p>I'm an economist with experience in macroeconomic forecasting. I enjoy using the latest machine learning and data science techniques in economic research, that can improve insight and efficiency into data. I am always eager to learn new technologies and take on challenging projects to improve my knowledge and skills in this rapidly changing profession.</p>
                     <p>When I'm not coding, you can find me exploring new technologies, reading widely, or working on personal projects that push my skills to the next level.</p>
-                </div>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">Economic theory</div>
-                        <div class="skill-item">Machine learning</div>
-                        <div class="skill-item">Data Science</div>
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">Macroeconomics</div>
-                        <div class="skill-item">Econometrics</div>
-                        <div class="skill-item">Presenting</div>
-                        <div class="skill-item">Research</div>
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item box">Economic theory</div>
+                            <div class="skill-item box">Machine learning</div>
+                            <div class="skill-item box">Data Science</div>
+                            <div class="skill-item box">Python</div>
+                            <div class="skill-item box">Macroeconomics</div>
+                            <div class="skill-item box">Econometrics</div>
+                            <div class="skill-item box">Presenting</div>
+                            <div class="skill-item box">Research</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume">
+    <!-- CV Section (id stays "resume" so old links and script.js still work) -->
+    <section id="resume" class="resume section section-alt" aria-labelledby="resume-title">
         <div class="container">
-            <h2 class="section-title">Resume</h2>
+            <div class="section-head section-head-row">
+                <div class="section-heading">
+                    <p class="section-label">02 · CV</p>
+                    <h2 class="section-title" id="resume-title">CV</h2>
+                </div>
+                <a href="https://github.com/107SBakst/Front-end/blob/47f47b4f72db0e8518ba2000d169484926627b65/Samuel_Bakst_CV.pdf" target="_blank" rel="noopener" class="btn btn-primary download-resume">Download CV (PDF)</a>
+            </div>
             <div class="resume-content">
                 <div class="resume-section">
-                    <h3>Experience</h3>
-                    <div class="resume-item">
-                        <div class="resume-header">
+                    <div class="resume-section-head"><h3>Experience</h3></div>
+                    <article class="resume-item box">
+                        <span class="date">Mar 2026 – Present</span>
+                        <div class="resume-body">
                             <h4>Senior Consultant</h4>
-                            <span class="date">Mar 2026 - Present</span>
+                            <p class="company"><a href="https://www.quod.com/" target="_blank" rel="noopener" class="company-link">Quod</a></p>
+                            <ul>
+                                <li>Senior consultant in the Economics &amp; Infrastructure team. Working on nationally significant infrastructure projects across the UK. Primarily involved in large scale infrastructure within the transport, energy, water and renewables sectors.</li>
+                            </ul>
                         </div>
-                        <p class="company"><a href="https://www.quod.com/" target="_blank" class="company-link">Quod</a></p>
-                        <ul>
-                            <li>Senior consultant in the Economics & Infrastructure team. Working on nationally significant infrastructure projects across the UK. Primarily involved in large scale infrastructure within the transport, energy, water and renewables sectors.</li>
-                       </ul>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-header">
+                    </article>
+                    <article class="resume-item box">
+                        <span class="date">Sep 2023 – Aug 2025</span>
+                        <div class="resume-body">
                             <h4>Economist</h4>
-                            <span class="date">Sep 2023 - Aug 2025</span>
+                            <p class="company"><a href="https://www.oxfordeconomics.com" target="_blank" rel="noopener" class="company-link">Oxford Economics</a></p>
+                            <ul>
+                                <li>An economist in the Eurozone macro team. Working on research and forecasting the Eurozone macro outlook.</li>
+                                <li>OECD country economist responsible for the macro forecast and research of Israel.</li>
+                                <li>Energy economist covering the oil, gas, electricity, and coal markets. Responsible for setting the energy market forecasts for all services in conjunction with the global macro outlook. Primarily responsible for the oil &amp; gas price forecasts as well as their market fundamentals and balances.</li>
+                                <li>Consumer goods economist in the Industry team, responsible for forecasting and research in the sector.</li>
+                            </ul>
                         </div>
-                        <p class="company"><a href="https://www.oxfordeconomics.com" target="_blank" class="company-link">Oxford Economics</a></p>
-                        <ul>
-                            <li>An economist in the Eurozone macro team. Working on research and forecasting the Eurozone macro outlook.</li>
-                            <li>OECD country economist responsible for the macro forecast and research of Israel.</li>
-                            <li>Energy economist covering the oil, gas, electricity, and coal markets. Responsible for setting the energy market forecasts for all services in conjunction with the global macro outlook. Primarily responsible for the oil & gas price forecasts as well as their market fundamentals and balances.</li>
-                            <li>Consumer goods economist in the Industry team, responsible for forecasting and research in the sector.</li>
-                       </ul>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-header">
+                    </article>
+                    <article class="resume-item box">
+                        <span class="date">Jun 2022 – Aug 2022</span>
+                        <div class="resume-body">
                             <h4>LNG Analyst</h4>
-                            <span class="date">Jun 2022 - Aug 2022</span>
+                            <p class="company"><a href="https://www.woodmac.com/" target="_blank" rel="noopener" class="company-link">Wood Mackenzie</a></p>
+                            <ul>
+                                <li>9-week summer internship in the liquified natural gas (LNG) &amp; assets team.</li>
+                            </ul>
                         </div>
-                        <p class="company"><a href="https://www.woodmac.com/" target="_blank" class="company-link">Wood Mackenzie</a></p>
-                        <ul>
-                            <li>9-week summer internship in the liquified natural gas (LNG) & assets team.</li>
-                        </ul>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-header">
+                    </article>
+                    <article class="resume-item box">
+                        <span class="date">Jun 2021 – Aug 2021</span>
+                        <div class="resume-body">
                             <h4>LNG Analyst</h4>
-                            <span class="date">Jun 2021 - Aug 2021</span>
+                            <p class="company"><a href="https://www.woodmac.com/" target="_blank" rel="noopener" class="company-link">Wood Mackenzie</a></p>
+                            <ul>
+                                <li>10-week summer internship in the short-term liquified natural gas (LNG) team.</li>
+                                <li>Produced a price regression model to understand the indexation of LNG contracts to Brent.</li>
+                            </ul>
                         </div>
-                        <p class="company"><a href="https://www.woodmac.com/" target="_blank" class="company-link">Wood Mackenzie</a></p>
-                        <ul>
-                            <li>10-week summer internship in the short-term liquified natural gas (LNG) team.</li>
-                            <li>Produced a price regression model to understand the indexation of LNG contracts to Brent.</li>
-                        </ul>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-header">
+                    </article>
+                    <article class="resume-item box">
+                        <span class="date">Sep 2018 – Aug 2019</span>
+                        <div class="resume-body">
                             <h4>Year in Industry student</h4>
-                            <span class="date">Sep 2018 - Aug 2019</span>
+                            <p class="company"><a href="https://www.quod.com/" target="_blank" rel="noopener" class="company-link">Quod</a></p>
+                            <ul>
+                                <li>I worked in the Socio-economic team that consults on the socio-economic impacts of developments and infrastructure projects and on how to mitigate the effects.</li>
+                            </ul>
                         </div>
-                        <p class="company"><a href="https://www.quod.com/" target="_blank" class="company-link">Quod</a></p>
-                        <ul>
-                            <li>I worked in the Socio-economic team that consults on the socio-economic impacts of developments and infrastructure projects and on how to mitigate the effects.</li>
-                        </ul>
-                    </div>                    
+                    </article>
                 </div>
 
                 <div class="resume-section">
-                    <h3>Education</h3>
-                    <div class="resume-item">
-                        <div class="resume-header">
+                    <div class="resume-section-head">
+                        <h3>Education</h3>
+                        <ul class="course-legend" aria-label="Course groups">
+                            <li><span class="swatch g-macro" aria-hidden="true"></span>Macro &amp; finance</li>
+                            <li><span class="swatch g-micro" aria-hidden="true"></span>Micro &amp; policy</li>
+                            <li><span class="swatch g-data" aria-hidden="true"></span>Econometrics &amp; data</li>
+                            <li><span class="swatch g-research" aria-hidden="true"></span>Research</li>
+                        </ul>
+                    </div>
+                    <article class="resume-item box">
+                        <span class="date">2022 – 2023</span>
+                        <div class="resume-body">
                             <h4>Masters of Science in Economics</h4>
-                            <span class="date">2022 - 2023</span>
+                            <p class="company"><a href="https://www.ucl.ac.uk" target="_blank" rel="noopener" class="company-link">University College London</a></p>
+                            <dl class="grade-tiles">
+                                <div class="grade-tile"><dt>Overall</dt><dd>Distinction</dd></div>
+                                <div class="grade-tile"><dt>Dissertation</dt><dd>Distinction · 83%</dd></div>
+                            </dl>
+                            <ul>
+                                <li>The dissertation titled <em>"Spreading the news; how central banks transmit narrative through the print media"</em> used machine learning to estimate how sentiment is conveyed from the central bank via the media to financial markets.</li>
+                            </ul>
+                            <div class="courses">
+                                <h5 class="courses-label">Courses</h5>
+                                <ul class="course-grid">
+                                    <li class="course-tile box g-micro"><span class="course-group">01 · Micro &amp; policy</span><span class="course-name">Microeconomics</span></li>
+                                    <li class="course-tile box g-macro"><span class="course-group">02 · Macro &amp; finance</span><span class="course-name">Macroeconomics</span></li>
+                                    <li class="course-tile box g-data"><span class="course-group">03 · Econometrics &amp; data</span><span class="course-name">Econometrics</span></li>
+                                    <li class="course-tile box g-research"><span class="course-group">04 · Research</span><span class="course-name">Dissertation</span></li>
+                                    <li class="course-tile box g-macro"><span class="course-group">05 · Macro &amp; finance</span><span class="course-name">Topics in Money &amp; Finance</span></li>
+                                    <li class="course-tile box g-data"><span class="course-group">06 · Econometrics &amp; data</span><span class="course-name">Time-Series Econometrics</span></li>
+                                    <li class="course-tile box g-macro"><span class="course-group">07 · Macro &amp; finance</span><span class="course-name">Macroeconomic policy</span></li>
+                                    <li class="course-tile box g-data"><span class="course-group">08 · Econometrics &amp; data</span><span class="course-name">Machine Learning for Economics</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <p class="company"><a href="https://www.ucl.ac.uk" target="_blank" class="company-link">University College London</a></p>
-                        <ul>
-                            <li>Distinction including a distinction in my dissertation (83%).</li>
-                            <li>The dissertation titled <em>"Spreading the news; how central banks transmit narrative through the print media"</em> used machine learning to estimate how sentiment is conveyed from the central bank via the media to financial markets.</li>
-                            <li>Courses: Microeconomics, Macroeconomics, Econometrics, Dissertation, Topics in Money & Finance, Time-Series Econometrics, Macroeconomic policy, Machine Learning for Economics</li>
-                        </ul>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-header">
+                    </article>
+                    <article class="resume-item box">
+                        <span class="date">2019 – 2022</span>
+                        <div class="resume-body">
                             <h4>Bachelor of Science in Economics</h4>
-                            <span class="date">2019 - 2022</span>
+                            <p class="company"><a href="https://www.bristol.ac.uk/" target="_blank" rel="noopener" class="company-link">University of Bristol</a></p>
+                            <dl class="grade-tiles">
+                                <div class="grade-tile"><dt>Overall</dt><dd>First class honours</dd></div>
+                                <div class="grade-tile"><dt>Dissertation</dt><dd>First · 71%</dd></div>
+                            </dl>
+                            <ul>
+                                <li>The Applied Economics Dissertation researched the causal effect of inequality on growth.</li>
+                            </ul>
+                            <div class="courses">
+                                <h5 class="courses-label">Courses</h5>
+                                <ul class="course-grid">
+                                    <li class="course-tile box g-macro"><span class="course-group">01 · Macro &amp; finance</span><span class="course-name">Macroeconomics</span></li>
+                                    <li class="course-tile box g-micro"><span class="course-group">02 · Micro &amp; policy</span><span class="course-name">Microeconomics</span></li>
+                                    <li class="course-tile box g-data"><span class="course-group">03 · Econometrics &amp; data</span><span class="course-name">Econometrics</span></li>
+                                    <li class="course-tile box g-research"><span class="course-group">04 · Research</span><span class="course-name">Applied Economics Dissertation</span></li>
+                                    <li class="course-tile box g-macro"><span class="course-group">05 · Macro &amp; finance</span><span class="course-name">Growth &amp; Development</span></li>
+                                    <li class="course-tile box g-micro"><span class="course-group">06 · Micro &amp; policy</span><span class="course-name">Applied Microeconomics</span></li>
+                                    <li class="course-tile box g-data"><span class="course-group">07 · Econometrics &amp; data</span><span class="course-name">Data Science</span></li>
+                                    <li class="course-tile box g-micro"><span class="course-group">08 · Micro &amp; policy</span><span class="course-name">Behavioural Economics</span></li>
+                                    <li class="course-tile box g-micro"><span class="course-group">09 · Micro &amp; policy</span><span class="course-name">Public Economics</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <p class="company"><a href="https://www.bristol.ac.uk/" target="_blank" class="company-link">University of Bristol</a></p>
-                        <ul>
-                            <li>First class with honours including a first class in my dissertation (71%).</li>
-                            <li>The Applied Economics Dissertation researched the causal effect of inequality on growth.</li>
-                            <li>Courses: Macroeconomics, Microeconomics, Econometrics, Applied Economics Dissertation, Growth & Development, Applied Microeconomics, Data Science, Behavioural Economics, Public Economics</li>
-                        </ul>
-                    </div>
+                    </article>
                 </div>
+
                 <div class="resume-section">
-                    <h3>Awards & Recognition</h3>
-                <div class="resume-item">
-                    <div class="resume-header">
-                        <h4><a href="https://www.focus-economics.com/awards/?atype=countries&ayear=2024&acomm=&aindi=exchange-rate&acoun=region_middle-east-and-north-africa#awards-filters" target="_blank" class="company-link">FocusEconomics forecast awards</a></h4>
+                    <div class="resume-section-head"><h3>Awards &amp; Recognition</h3></div>
+                    <article class="resume-item box">
                         <span class="date">2024</span>
-                    </div>
-                    <p>1st place for the Israel exchange rate forecast</p>
+                        <div class="resume-body">
+                            <h4><a href="https://www.focus-economics.com/awards/?atype=countries&amp;ayear=2024&amp;acomm=&amp;aindi=exchange-rate&amp;acoun=region_middle-east-and-north-africa#awards-filters" target="_blank" rel="noopener" class="company-link">FocusEconomics forecast awards</a></h4>
+                            <p>1st place for the Israel exchange rate forecast</p>
+                        </div>
+                    </article>
                 </div>
-                </div>
-            </div>
-            
-            <div class="download-resume">
-                <a href="https://github.com/107SBakst/Front-end/blob/47f47b4f72db0e8518ba2000d169484926627b65/Samuel_Bakst_CV.pdf" target="_blank" class="btn btn-primary">Download Resume PDF</a>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects section" aria-labelledby="projects-title">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p style="text-align: center; font-size: 1.5rem; color: var(--text-secondary); margin-top: 2rem;">Coming Soon</p>
-        </div>
-        <!-- 
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">Project Screenshot</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Title 1</h3>
-                        <p>Description of your first project. What technologies you used, what problems it solves, and what you learned.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">Project Screenshot</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Title 2</h3>
-                        <p>Description of your second project. Highlight the key features and technologies used.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">SQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">Project Screenshot</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Title 3</h3>
-                        <p>Description of your third project. What makes this project special and what you accomplished.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-head">
+                <p class="section-label">03 · Projects</p>
+                <h2 class="section-title" id="projects-title">Projects</h2>
+                <p class="section-intro">Things I have built and run.</p>
             </div>
+            <article class="project-card box">
+                <div class="project-content">
+                    <div class="project-meta">
+                        <span class="badge-live"><span class="dot" aria-hidden="true"></span>Live</span>
+                        <span class="mono">gdtv2-eosin.vercel.app</span>
+                    </div>
+                    <h3>GDT · Global Data Technology</h3>
+                    <p>Official statistics get revised after first publication. GDT saves each new version it finds, so you can see what was known on any past day, not just the latest figure. It pulls from sources such as the US BEA, UK ONS, Eurostat and the Bank of Japan, and serves them through a web explorer and an API.</p>
+                    <ul class="project-points">
+                        <li><strong>Every revision kept.</strong> <span>Each release is saved as a new version, and nothing is overwritten.</span></li>
+                        <li><strong>Release-aware fetching.</strong> <span>Series are fetched on a daily schedule, with extra checks around known release times.</span></li>
+                        <li><strong>Public docs, keyed data.</strong> <span>Modelled on FRED's API; the docs are public, and reading data needs a read key.</span></li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Parquet</span>
+                        <span class="tech-tag">Cloudflare R2</span>
+                        <span class="tech-tag">Cloudflare Workers</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Open GDT <span aria-hidden="true">↗</span></a>
+                        <a href="https://gdtv2-eosin.vercel.app/docs" target="_blank" rel="noopener" class="btn btn-outline">API docs <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+                <figure class="project-figure">
+                    <a href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener" class="browser-frame zoom" aria-label="Open GDT (screenshot of the landing page)">
+                        <span class="browser-bar">
+                            <span class="browser-dot" aria-hidden="true"></span>
+                            <span class="browser-dot" aria-hidden="true"></span>
+                            <span class="browser-dot" aria-hidden="true"></span>
+                            <span class="browser-url">gdtv2-eosin.vercel.app</span>
+                        </span>
+                        <span class="browser-view"><img src="assets/img/gdt-landing.jpg" width="1440" height="900" loading="lazy" alt="The GDT landing page: headline, a globe of the latest releases, and service status cards"></span>
+                    </a>
+                    <figcaption>The GDT landing page, live. Screenshot taken 1 Nov 2026.</figcaption>
+                </figure>
+            </article>
+            <p class="section-intro">More projects coming soon.</p>
         </div>
-        -->
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact section section-alt section-last" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'm always interested in new opportunities and interesting projects. Let's connect!</p>
-                <div class="contact-links">
-                    <a href="mailto:9l1rliv1a@mozmail.com" class="contact-link">
-                        <span>Email</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/samuel-b-313450147/" target="_blank" class="contact-link">
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/107SBakst" target="_blank" class="contact-link">
-                        <span>GitHub</span>
-                    </a>
-                </div>
+            <div class="section-head">
+                <p class="section-label">04 · Contact</p>
+                <h2 class="section-title" id="contact-title">Get in touch</h2>
+                <p class="contact-intro">I'm always interested in new opportunities and interesting projects. Let's connect!</p>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:9l1rliv1a@mozmail.com" class="contact-link box">
+                    <span>Email</span><span class="arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="https://www.linkedin.com/in/samuel-b-313450147/" target="_blank" rel="noopener" class="contact-link box">
+                    <span>LinkedIn</span><span class="arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://github.com/107SBakst" target="_blank" rel="noopener" class="contact-link box">
+                    <span>GitHub</span><span class="arrow" aria-hidden="true">↗</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Samuel Bakst. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Samuel Bakst. All rights reserved.</p>
+        <p>Built on the <a href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener">GDT</a> design system.</p>
     </footer>
 
     <script src="script.js"></script>

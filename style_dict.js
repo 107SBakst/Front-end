@@ -222,6 +222,64 @@ export const styleDict = {
         feature_badge_border: "1px solid rgba(96, 165, 250, 0.3)",
         automation_badge_border: "1px solid rgba(16, 185, 129, 0.3)",
         hero_badge_border: "1px solid rgba(34, 197, 94, 0.3)"
+    },
+
+    // GDT design system (plan 040), as used by index.html / styles.css. Data only:
+    // deliberately NOT in cssVariables, because style-loader.js writes those inline on <html>
+    // and inline values would pin one theme and break dark mode. styles.css is the live source.
+    gdt: {
+        light: {
+            ground: "#F5F6F6",
+            surface: "#FFFFFF",
+            raised: "#EEF0F0",
+            border: "#E1E4E5",
+            control: "#C8CDCF",
+            control_hover: "#959DA1",
+            text: "#14171A",
+            soft: "#3D4449",
+            muted: "#626A70",
+            accent: "#0B7D6F",
+            accent_ink: "#FFFFFF",
+            accent_hover: "#08594F",
+            up: "#0B7D6F",
+            down: "#C2570C",
+            ok: "#1C7C54",
+            fail: "#C8102E",
+            hero: "#111417",
+            hero2: "#1B2024",
+            hero_accent: "#2DD4BF",
+            series: ["#14171A", "#0B7D6F", "#6E56CF", "#E3A21A", "#D9480F", "#2B8CBE"]
+        },
+        // Graphite, no navy
+        dark: {
+            ground: "#0E1113",
+            surface: "#15191C",
+            raised: "#1C2125",
+            border: "#262C30",
+            control: "#3A4247",
+            control_hover: "#5A6368",
+            text: "#ECEFF0",
+            soft: "#C5CBCE",
+            muted: "#8F989D",
+            accent: "#2DD4BF",
+            accent_ink: "#0E1113",
+            accent_hover: "#7EE7D8",
+            up: "#2DD4BF",
+            down: "#F2A65A",
+            ok: "#4FC28F",
+            fail: "#FF7385",
+            hero: "#090B0D",
+            hero2: "#121518",
+            hero_accent: "#2DD4BF",
+            series: ["#ECEFF0", "#2DD4BF", "#A594F9", "#F2C14E", "#FF8A4C", "#7CC4E8"]
+        },
+        fonts: {
+            serif: "\"Source Serif 4\", Georgia, serif",
+            sans: "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+            mono: "\"IBM Plex Mono\", ui-monospace, monospace"
+        },
+        radius: "4px",
+        theme_storage_key: "gdt.theme"
     }
 };
 
