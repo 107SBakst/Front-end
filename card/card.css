@@ -1,5 +1,6 @@
-/* Digital business card (card/index.html). Colours, fonts and theme come from ../styles.css,
-   the same GDT tokens as the main site, so light/dark follow the visitor's setting. */
+/* Digital business card (card/index.html). Colours and fonts come from ../styles.css, the same
+   GDT tokens as the main site. Light mode only: index.html sets data-theme="light" on <html>.
+   Order on screen: header, QR codes, then the contact buttons. */
 [hidden] { display: none !important; }
 .card-page { min-height: 100vh; min-height: 100dvh; }
 .vcard { max-width: 440px; margin: 0 auto; padding-bottom: calc(16px + env(safe-area-inset-bottom)); background: var(--ground); }
@@ -10,7 +11,7 @@
 /* Header: graphite band like the site hero; runs under the iPhone status bar */
 .vc-hero {
   position: relative; overflow: hidden; display: grid; justify-items: center; gap: 10px; text-align: center;
-  padding: calc(40px + env(safe-area-inset-top)) 24px 28px; color: #FFFFFF;
+  padding: calc(28px + env(safe-area-inset-top)) 24px 22px; color: #FFFFFF;
   background: linear-gradient(180deg, var(--hero) 0%, var(--hero2) 100%);
 }
 .vc-hero > :not(svg) { position: relative; }
@@ -23,7 +24,7 @@
 .vc-role { color: rgba(255, 255, 255, .74); font-size: 14px; }
 
 /* Actions */
-.vc-actions { display: grid; gap: 10px; padding: 20px 20px 8px; }
+.vc-actions { display: grid; gap: 10px; padding: 16px 20px 8px; }
 .vc-save {
   display: flex; align-items: center; justify-content: center; min-height: 50px; border-radius: var(--radius);
   background: var(--accent); color: var(--accent-ink); font-weight: 600; text-decoration: none;
@@ -48,7 +49,7 @@
 
 /* QR codes: always dark modules on a white tile, so they scan in dark mode too */
 .vc-qr {
-  margin: 14px 20px 0; padding: 18px; display: grid; justify-items: center; gap: 12px; text-align: center;
+  margin: 16px 20px 0; padding: 16px; display: grid; justify-items: center; gap: 10px; text-align: center;
   border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
 }
 .vc-tabs { display: inline-flex; padding: 2px; gap: 2px; border: 1px solid var(--control); border-radius: var(--radius); }

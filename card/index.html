@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- The card is light mode only: data-theme="light" above switches off styles.css's dark rules. -->
+    <meta name="color-scheme" content="light">
     <title>Samuel Bakst · Digital card</title>
     <meta name="description" content="Samuel Bakst, economist. Save my contact, see my CV, or open GDT, a live economic data project.">
     <meta name="theme-color" content="#111417">
@@ -17,10 +19,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-    <!-- Same tokens and theme as the main site (GDT design system) -->
+    <!-- Same tokens as the main site (GDT design system). No theme.js here, so a saved dark choice is ignored. -->
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="card.css">
-    <script src="../assets/js/theme.js"></script>
 </head>
 <body class="card-page">
     <main class="vcard">
@@ -34,15 +35,6 @@
             <p class="vc-eyebrow">Economist · Macro · Energy</p>
             <p class="vc-role">Senior Consultant, Quod</p>
         </header>
-
-        <nav class="vc-actions" aria-label="Contact and links">
-            <a class="vc-save" href="samuel-bakst.vcf">Save contact</a>
-            <a class="vc-link" href="../">My website <span class="vc-arrow" aria-hidden="true">↗</span></a>
-            <a class="vc-link" href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener"><span class="vc-gdt"><span class="vc-dot" aria-hidden="true"></span>GDT · live project</span><span class="vc-arrow" aria-hidden="true">↗</span></a>
-            <a class="vc-link" href="https://www.linkedin.com/in/samuel-b-313450147/" target="_blank" rel="noopener">LinkedIn <span class="vc-arrow" aria-hidden="true">↗</span></a>
-            <a class="vc-link" href="mailto:9l1rliv1a@mozmail.com">Email <span class="vc-arrow" aria-hidden="true">→</span></a>
-            <button class="vc-link vc-share" type="button" hidden>Share this card <span class="vc-arrow" aria-hidden="true">⇪</span></button>
-        </nav>
 
         <section class="vc-qr" aria-label="QR codes">
             <div class="vc-tabs" role="tablist" aria-label="Choose a QR code">
@@ -64,6 +56,15 @@
             </div>
             <p class="vc-hint">Show this screen to share. Scan with a phone camera.</p>
         </section>
+
+        <nav class="vc-actions" aria-label="Contact and links">
+            <a class="vc-save" href="samuel-bakst.vcf">Save contact</a>
+            <a class="vc-link" href="../">My website <span class="vc-arrow" aria-hidden="true">↗</span></a>
+            <a class="vc-link" href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener"><span class="vc-gdt"><span class="vc-dot" aria-hidden="true"></span>GDT · live project</span><span class="vc-arrow" aria-hidden="true">↗</span></a>
+            <a class="vc-link" href="https://www.linkedin.com/in/samuel-b-313450147/" target="_blank" rel="noopener">LinkedIn <span class="vc-arrow" aria-hidden="true">↗</span></a>
+            <a class="vc-link" href="mailto:9l1rliv1a@mozmail.com">Email <span class="vc-arrow" aria-hidden="true">→</span></a>
+            <button class="vc-link vc-share" type="button" hidden>Share this card <span class="vc-arrow" aria-hidden="true">⇪</span></button>
+        </nav>
 
         <p class="vc-foot">Built on the <a href="https://gdtv2-eosin.vercel.app" target="_blank" rel="noopener">GDT</a> design system</p>
     </main>
