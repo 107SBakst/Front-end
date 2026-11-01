@@ -1,0 +1,70 @@
+/* Digital business card (card/index.html). Colours, fonts and theme come from ../styles.css,
+   the same GDT tokens as the main site, so light/dark follow the visitor's setting. */
+[hidden] { display: none !important; }
+.card-page { min-height: 100vh; min-height: 100dvh; }
+.vcard { max-width: 440px; margin: 0 auto; padding-bottom: calc(16px + env(safe-area-inset-bottom)); background: var(--ground); }
+@media (min-width: 480px) {
+  .vcard { margin: 32px auto; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
+}
+
+/* Header: graphite band like the site hero; runs under the iPhone status bar */
+.vc-hero {
+  position: relative; overflow: hidden; display: grid; justify-items: center; gap: 10px; text-align: center;
+  padding: calc(40px + env(safe-area-inset-top)) 24px 28px; color: #FFFFFF;
+  background: linear-gradient(180deg, var(--hero) 0%, var(--hero2) 100%);
+}
+.vc-hero > :not(svg) { position: relative; }
+.vc-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.vc-lines polyline { fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; animation: vc-draw 2.4s cubic-bezier(.4, 0, .2, 1) .3s forwards; }
+@keyframes vc-draw { to { stroke-dashoffset: 0; } }
+.vc-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid #2DD4BF; box-shadow: 0 0 0 4px rgba(45, 212, 191, .18); }
+.vc-hero h1 { font: 500 30px/1.1 var(--serif); letter-spacing: -.01em; }
+.vc-eyebrow { color: rgba(255, 255, 255, .72); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.vc-role { color: rgba(255, 255, 255, .74); font-size: 14px; }
+
+/* Actions */
+.vc-actions { display: grid; gap: 10px; padding: 20px 20px 8px; }
+.vc-save {
+  display: flex; align-items: center; justify-content: center; min-height: 50px; border-radius: var(--radius);
+  background: var(--accent); color: var(--accent-ink); font-weight: 600; text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.vc-save:hover { color: var(--accent-ink); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(var(--upr), .28); }
+.vc-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 52px; padding: 0 16px;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text);
+  font: 600 16px/1.2 var(--sans); text-align: left; text-decoration: none; cursor: pointer;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.vc-link:hover { color: var(--text); transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 24px rgba(var(--upr), .18); }
+.vc-arrow { color: var(--accent); }
+.vc-gdt { display: inline-flex; align-items: center; gap: 8px; }
+.vc-dot { width: 7px; height: 7px; border-radius: 50%; background: #2DD4BF; animation: vc-pulse 2s ease-out infinite; }
+@keyframes vc-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, .55); }
+  70% { box-shadow: 0 0 0 8px rgba(45, 212, 191, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+}
+
+/* QR codes: always dark modules on a white tile, so they scan in dark mode too */
+.vc-qr {
+  margin: 14px 20px 0; padding: 18px; display: grid; justify-items: center; gap: 12px; text-align: center;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+}
+.vc-tabs { display: inline-flex; padding: 2px; gap: 2px; border: 1px solid var(--control); border-radius: var(--radius); }
+.vc-tabs button {
+  min-height: 40px; min-width: 88px; padding: 0 12px; border: 0; border-radius: 3px; background: transparent;
+  color: var(--soft); font: 600 13px/1 var(--sans); cursor: pointer;
+}
+.vc-tabs button[aria-selected="true"] { background: var(--text); color: var(--ground); }
+.vc-panel { display: grid; justify-items: center; gap: 8px; }
+.vc-panel img { width: 184px; height: 184px; padding: 12px; background: #FFFFFF; border-radius: var(--radius); }
+.vc-panel .mono { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.vc-hint { color: var(--soft); font-size: 13px; }
+.vc-foot { padding: 20px; color: var(--muted); font-size: 12px; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vc-lines polyline { animation: none; stroke-dashoffset: 0; }
+  .vc-dot { animation: none; }
+  .vc-link, .vc-save { transition: none; }
+}
