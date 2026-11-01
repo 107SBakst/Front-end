@@ -224,9 +224,9 @@ export const styleDict = {
         hero_badge_border: "1px solid rgba(34, 197, 94, 0.3)"
     },
 
-    // GDT design system (plan 040), as used by index.html / styles.css. Data only:
-    // deliberately NOT in cssVariables, because style-loader.js writes those inline on <html>
-    // and inline values would pin one theme and break dark mode. styles.css is the live source.
+    // GDT design system (plan 040), as used by index.html / styles.css. Data only, and kept out
+    // of cssVariables: anything that wrote those inline on <html> would pin one theme and break
+    // dark mode. styles.css is the live source.
     gdt: {
         light: {
             ground: "#F5F6F6",

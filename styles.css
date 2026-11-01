@@ -1,9 +1,7 @@
 /* Samuel Bakst — personal site on the GDT design system (GDT plan 040).
    Light tokens are copied from GDT (GDT/api/static/theme.css :root), names and values unchanged.
-   Dark is this site's own graphite (no navy). Theme control: assets/js/theme.js sets data-theme
-   on <html>; with no choice stored, the page follows the system setting.
-   Note: assets/js/style-loader.js writes style_dict.js cssVariables inline on <html>, and two of
-   those names (--positive, --negative) match GDT tokens. Inline wins, so this sheet never uses them. */
+   Dark is graphite (no navy), identical to GDT's dark tokens since GDT plan 041. Theme control:
+   assets/js/theme.js sets data-theme on <html>; with no choice stored, the page follows the system. */
 
 /* ── Tokens ─────────────────────────────────────────────────────────────── */
 :root {
