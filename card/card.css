@@ -39,6 +39,10 @@
 }
 .vc-link:hover { color: var(--text); transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 24px rgba(var(--upr), .18); }
 .vc-arrow { color: var(--accent); }
+/* A button with a second line, e.g. Email + the address */
+.vc-link:has(.vc-text) { padding-top: 8px; padding-bottom: 8px; }
+.vc-text { display: grid; gap: 3px; min-width: 0; }
+.vc-sub { color: var(--muted); font: 400 13px/1.3 var(--mono-id); overflow-wrap: anywhere; }
 .vc-gdt { display: inline-flex; align-items: center; gap: 8px; }
 .vc-dot { width: 7px; height: 7px; border-radius: 50%; background: #2DD4BF; animation: vc-pulse 2s ease-out infinite; }
 @keyframes vc-pulse {
